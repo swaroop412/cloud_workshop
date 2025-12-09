@@ -1,0 +1,276 @@
+:root {
+    --bg-color: #000;
+    --text-color: #fff;
+    --accent-color: #ffc107; /* A bright yellow/orange for the dot */
+    --font-family: Arial, sans-serif; /* Use a similar-looking font if possible */
+}
+
+/* Basic Reset and Body Styles */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensure the body takes up the full viewport height */
+    display: flex; /* Helps structure the header and main content */
+    flex-direction: column;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    padding: 20px 50px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px; /* Space between links */
+}
+
+.navbar a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    flex-grow: 1; /* Makes the hero section take up remaining vertical space */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: left; /* Ensure text starts on the left */
+    padding: 50px;
+}
+
+.hero-content {
+    /* Set a max width or padding to control the overall flow */
+    /* Adjust these based on how far left you want the text to sit */
+    padding-right: 20%; 
+    line-height: 0.9; /* Tight line height for the dramatic look */
+}
+
+/* --- Main Heading (Hello. I am Steven) --- */
+.hero-content h1 {
+    font-size: 10vw; /* Use viewport units for large, responsive text */
+    font-weight: 900; /* Very bold/heavy font */
+    margin: 0;
+    text-transform: capitalize; /* Ensure I and Steven are capitalized */
+}
+
+/* Styling the accent dot */
+.dot {
+    display: inline-block;
+    width: 1.5vw; /* Size of the dot */
+    height: 1.5vw;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    margin-left: 0.5vw;
+    /* Vertically align it slightly better */
+    transform: translateY(-20%);
+}
+
+/* --- Subtitle (Developer details) --- */
+.subtitle {
+    font-size: 18px; /* Standard text size */
+    font-weight: 500;
+    margin-top: 20px;
+    line-height: 1.5;
+    /* Position the subtitle relative to the main heading */
+    margin-left: calc(10vw + 20px); /* Pushes the subtitle far to the right */
+    max-width: 250px;
+}
+
+/* Optional: Make text inside <p> with ** bold */
+.subtitle strong {
+    font-weight: 700;
+}
+
+/* --- Media Query for smaller screens --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 20px;
+    }
+
+    .hero-content {
+        padding: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 18vw; /* Make text even larger on small screens */
+    }
+
+    .dot {
+        width: 3vw;
+        height: 3vw;
+    }
+
+    /* Bring the subtitle back closer to the main text on mobile */
+    .subtitle {
+        margin-left: 0; 
+        margin-top: 15px;
+        font-size: 16px;
+    }
+}
+
+/* All previous body, navbar, and basic setup styles remain the same */
+
+/* --- Hero Section --- */
+.hero-section {
+    flex-grow: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 50px;
+}
+
+.hero-content {
+    /* Set a max width or padding to control the overall flow */
+    /* Remove padding-right here */
+    line-height: 0.9; 
+}
+
+/* --- Main Heading Lines --- */
+.hero-content h1 {
+    font-size: 10vw; 
+    font-weight: 900; 
+    margin: 0;
+    text-transform: capitalize;
+}
+
+/* Styles for the Accent Dot (remains the same) */
+.dot {
+    display: inline-block;
+    width: 1.5vw; 
+    height: 1.5vw;
+    background-color: #ffc107; /* Use your defined accent color variable */
+    border-radius: 50%;
+    margin-left: 0.5vw;
+    transform: translateY(-20%);
+}
+
+/* --- Line 2: The new group for horizontal alignment --- */
+.line-two-group {
+    display: flex; /* Key to placing "I am" and the subtitle side-by-side */
+    align-items: flex-start; /* Aligns the elements to the top */
+    gap: 30px; /* Space between "I am" and the subtitle */
+    margin-bottom: 0; /* Ensures "Steven" is right below */
+}
+
+/* Ensure the 'I am' text is still the large size */
+.line-two {
+    white-space: nowrap; /* Prevents "I am" from wrapping if the screen is small */
+}
+
+/* --- Subtitle (Developer details) --- */
+.subtitle {
+    font-size: 18px; 
+    font-weight: 500;
+    margin: 0; /* Resetting margin from the previous version */
+    padding-top: 15px; /* Adjust vertical alignment to visually match the image */
+    line-height: 1.5;
+}
+
+/* Optional: Make text inside <p> with ** bold */
+.subtitle strong {
+    font-weight: 700;
+}
+
+/* --- Media Query for smaller screens --- */
+@media (max-width: 768px) {
+    /* ... (Other existing media query styles) ... */
+
+    .line-two-group {
+        flex-direction: column; /* Stacks 'I am' and the subtitle vertically */
+        gap: 5px; /* Reduce gap when stacked */
+    }
+
+    .subtitle {
+        padding-top: 0; /* Remove top padding when stacked */
+    }
+}
+/* All previous body, navbar, and basic setup styles remain the same */
+
+/* --- Hero Section --- */
+.hero-section {
+    flex-grow: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 50px;
+}
+
+.hero-content {
+    /* Set a max width or padding to control the overall flow */
+    /* Remove padding-right here */
+    line-height: 0.9; 
+}
+
+/* --- Main Heading Lines --- */
+.hero-content h1 {
+    font-size: 10vw; 
+    font-weight: 900; 
+    margin: 0;
+    text-transform: capitalize;
+}
+
+/* Styles for the Accent Dot (remains the same) */
+.dot {
+    display: inline-block;
+    width: 1.5vw; 
+    height: 1.5vw;
+    background-color: #ffc107; /* Use your defined accent color variable */
+    border-radius: 50%;
+    margin-left: 0.5vw;
+    transform: translateY(-20%);
+}
+
+/* --- Line 2: The new group for horizontal alignment --- */
+.line-two-group {
+    display: flex; /* Key to placing "I am" and the subtitle side-by-side */
+    align-items: flex-start; /* Aligns the elements to the top */
+    gap: 30px; /* Space between "I am" and the subtitle */
+    margin-bottom: 0; /* Ensures "Steven" is right below */
+}
+
+/* Ensure the 'I am' text is still the large size */
+.line-two {
+    white-space: nowrap; /* Prevents "I am" from wrapping if the screen is small */
+}
+
+/* --- Subtitle (Developer details) --- */
+.subtitle {
+    font-size: 18px; 
+    font-weight: 500;
+    margin: 0; /* Resetting margin from the previous version */
+    padding-top: 15px; /* Adjust vertical alignment to visually match the image */
+    line-height: 1.5;
+}
+
+/* Optional: Make text inside <p> with ** bold */
+.subtitle strong {
+    font-weight: 700;
+}
+
+/* --- Media Query for smaller screens --- */
+@media (max-width: 768px) {
+    /* ... (Other existing media query styles) ... */
+
+    .line-two-group {
+        flex-direction: column; /* Stacks 'I am' and the subtitle vertically */
+        gap: 5px; /* Reduce gap when stacked */
+    }
+
+    .subtitle {
+        padding-top: 0; /* Remove top padding when stacked */
+    }
+}
